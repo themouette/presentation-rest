@@ -1,3 +1,6 @@
 [submodule "themes"]
 	path = themes
 	url = git://github.com/akrabat/avalanche.git
+[submodule "html"]
+	path = html
+	url = git@github.com:themouette/presentation-rest.git
