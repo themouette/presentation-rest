@@ -84,8 +84,9 @@ content:
 
     {"color": "green", "size": "big"}
 
-Server should return `200 OK` response with one of following
-content:
+Server should return `204 OK` response with no content.
+
+In some cases you might return `200 OK` with one of following content:
 
 * `id` of resource
 * `URI` of the resource
