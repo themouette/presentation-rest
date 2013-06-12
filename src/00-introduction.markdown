@@ -12,25 +12,26 @@ You already know about all of this, but this might be a new way to look at it...
 
 Everything is a **resource**:
 
-* identified by it's **URI**
-* with several **representations**
+* identified by its **URI**
+* with several different **representations**
 
-> **<accronym title="Unique Resource Location">URL</accronym>** is a **<accronym
-> title="Unique Resource Identifier">URI</accronym>** but there is others.
+> A **<accronym title="Unique Resource Location">URL</accronym>** is a
+> **<accronym title="Unique Resource Identifier">URI</accronym>** but there is
+> others.
 
 ---
 
 # URI
 
-It's the **resource**'s reference adress, where to contact it.
+It's the **resource**'s reference address, where to contact it.
 
-For instance, your **URI** as a resource can be your post adress.
+For instance, your **URI** as a resource can be your post address.
 
 It is **unique** for each resource.
 
 > A resource can have other non reference locations, and this reference can
-> change depending of the client.
-> You have personal and professional e-mail, phone number...
+> change depending on the client.
+> You have personal and professional emails, phone numbers...
 
 ---
 
@@ -43,7 +44,7 @@ Say you want a **Billie Holiday** album, you can get it:
 * vinyl record
 * tape
 
-It's all the same **resource** with different representations !
+It's always the same **resource** with different representations!
 
 ---
 
@@ -67,11 +68,11 @@ To interact with a resource, we use verbs.
 
 Resources can be organized into collections:
 
-* `albums` can are identified by band + title
+* `albums` are identified by band + title
 * `candles` are identified by location
 * `people` are identified by name
 
-Each collection can have relations
+Each collection may have relations
 
 * `people` can have `albums` and `candles`
 * `albums` have `owners` and `artist`

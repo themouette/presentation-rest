@@ -31,11 +31,13 @@ Resources:
 
 > GET /bananas?fields=size,color,origin(country,town)
 
+Go further and read about [OData](http://www.odata.org/)
+
 ---
 
 # Retrieve a resource
 
-To `GET` a resource, is as simple as a `GET` request on the resource `URI`
+`GET`ing a resource, is as simple as a `GET` request on the resource `URI`
 
     !html
     GET /bananas/henry HTTP/1.1
@@ -60,7 +62,8 @@ To `GET` a resource, is as simple as a `GET` request on the resource `URI`
 
     {"color": "yellow", "size":"big"}
 
-Server should return `201 Resource Created` response with one of following
+Server **MUST** return `201 Resource Created` response with the
+URI of the created resource, in a `Location` **header** and CAN return following
 content:
 
 * `id` of the newly created resource
@@ -96,7 +99,7 @@ In some cases you might return `200 OK` with one of following content:
 
 ---
 
-# Delete a resource
+# Delete A Resource
 
 A `DELETE` request on the resource `URI` is all it needs:
 
@@ -110,7 +113,7 @@ You should receive a `204 No Content` empty response.
 
 ---
 
-# Mimic HTTP methods
+# Mimic HTTP Methods
 
 Some clients can't use the whole set of HTTP verbs.
 
@@ -122,9 +125,9 @@ As a workaround, we use an additional parameter: `method` (or `_method`).
 
 ---
 
-# No HTTP verb fit your case ?
+# No HTTP Verb Fit Your Case?
 
-## What to do when there is no HTTP verb covering my case ?
+## What to do when there is no HTTP verb covering my case?
 
 > Have a look at [HTTP RFC](http://www.ietf.org/rfc/rfc2616.txt), there is some
 more

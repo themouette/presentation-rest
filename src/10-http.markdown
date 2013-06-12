@@ -105,7 +105,7 @@ An HTTP verb is an action to perform on a **resource** located at a given
 
 * `GET`: retrieve a **resource** or a **collection of resources**;
 * `POST`: create a new **resource**;
-* `PUT`: update an existing **resource**;
+* `PUT`: update (or create) an existing **resource**;
 * `DELETE`: delete a given **resource**;
 * `PATCH`: partial update of a given **resource**.
 
@@ -127,9 +127,9 @@ Content-Length: length
 </pre>
 </div>
 
-This is the two ways **client** can send data to server.
+These are the two ways **client** can send data to server.
 
-> By the way, **never trust user input**, **never!**
+> By the way, **never trust user input**, **never, ever!**
 
 ---
 
@@ -156,7 +156,7 @@ Parameters can be provided in any format, so use `Content-Type` header.
 
 # Content negotiation
 
-Client use `Accept` header to tell server which format it underestand.
+Client uses `Accept` header to tell server which format it underestands.
 
 `Accept` is a list of formats the client understands:
 
