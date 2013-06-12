@@ -1484,12 +1484,13 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
             
             <section><p>Everything is a <strong>resource</strong>:</p>
 <ul>
-<li>identified by it's <strong>URI</strong></li>
-<li>with several <strong>representations</strong></li>
+<li>identified by its <strong>URI</strong></li>
+<li>with several different <strong>representations</strong></li>
 </ul>
 <blockquote>
-<p><strong><accronym title="Unique Resource Location">URL</accronym></strong> is a <strong><accronym
-title="Unique Resource Identifier">URI</accronym></strong> but there is others.</p>
+<p>A <strong><accronym title="Unique Resource Location">URL</accronym></strong> is a
+<strong><accronym title="Unique Resource Identifier">URI</accronym></strong> but there is
+others.</p>
 </blockquote></section>
             
           </div>
@@ -1520,13 +1521,13 @@ title="Unique Resource Identifier">URI</accronym></strong> but there is others.<
             <header><h1>URI</h1></header>
             
             
-            <section><p>It's the <strong>resource</strong>'s reference adress, where to contact it.</p>
-<p>For instance, your <strong>URI</strong> as a resource can be your post adress.</p>
+            <section><p>It's the <strong>resource</strong>'s reference address, where to contact it.</p>
+<p>For instance, your <strong>URI</strong> as a resource can be your post address.</p>
 <p>It is <strong>unique</strong> for each resource.</p>
 <blockquote>
 <p>A resource can have other non reference locations, and this reference can
-change depending of the client.
-You have personal and professional e-mail, phone number...</p>
+change depending on the client.
+You have personal and professional emails, phone numbers...</p>
 </blockquote></section>
             
           </div>
@@ -1564,7 +1565,7 @@ You have personal and professional e-mail, phone number...</p>
 <li>vinyl record</li>
 <li>tape</li>
 </ul>
-<p>It's all the same <strong>resource</strong> with different representations !</p></section>
+<p>It's always the same <strong>resource</strong> with different representations!</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1637,11 +1638,11 @@ GET "sex"
             
             <section><p>Resources can be organized into collections:</p>
 <ul>
-<li><code>albums</code> can are identified by band + title</li>
+<li><code>albums</code> are identified by band + title</li>
 <li><code>candles</code> are identified by location</li>
 <li><code>people</code> are identified by name</li>
 </ul>
-<p>Each collection can have relations</p>
+<p>Each collection may have relations</p>
 <ul>
 <li><code>people</code> can have <code>albums</code> and <code>candles</code></li>
 <li><code>albums</code> have <code>owners</code> and <code>artist</code></li>
@@ -1926,7 +1927,7 @@ Content-Length: length
 <ul>
 <li><code>GET</code>: retrieve a <strong>resource</strong> or a <strong>collection of resources</strong>;</li>
 <li><code>POST</code>: create a new <strong>resource</strong>;</li>
-<li><code>PUT</code>: update an existing <strong>resource</strong>;</li>
+<li><code>PUT</code>: update (or create) an existing <strong>resource</strong>;</li>
 <li><code>DELETE</code>: delete a given <strong>resource</strong>;</li>
 <li><code>PATCH</code>: partial update of a given <strong>resource</strong>.</li>
 </ul></section>
@@ -1972,9 +1973,9 @@ Content-Length: length
 </pre>
 </div>
 
-<p>This is the two ways <strong>client</strong> can send data to server.</p>
+<p>These are the two ways <strong>client</strong> can send data to server.</p>
 <blockquote>
-<p>By the way, <strong>never trust user input</strong>, <strong>never!</strong></p>
+<p>By the way, <strong>never trust user input</strong>, <strong>never, ever!</strong></p>
 </blockquote></section>
             
           </div>
@@ -2047,7 +2048,7 @@ Content-Length: length
             <header><h1>Content negotiation</h1></header>
             
             
-            <section><p>Client use <code>Accept</code> header to tell server which format it underestand.</p>
+            <section><p>Client uses <code>Accept</code> header to tell server which format it underestands.</p>
 <p><code>Accept</code> is a list of formats the client understands:</p>
 <ul>
 <li>coma separated</li>
@@ -2174,7 +2175,8 @@ Accept: <span style="color:red">text/html; q=1.0</span>, <span style="color:gree
 <h2>Select fields</h2>
 <blockquote>
 <p>GET /bananas?fields=size,color,origin(country,town)</p>
-</blockquote></section>
+</blockquote>
+<p>Go further and read about <a href="http://www.odata.org/">OData</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2204,7 +2206,7 @@ Accept: <span style="color:red">text/html; q=1.0</span>, <span style="color:gree
             <header><h1>Retrieve a resource</h1></header>
             
             
-            <section><p>To <code>GET</code> a resource, is as simple as a <code>GET</code> request on the resource <code>URI</code></p>
+            <section><p><code>GET</code>ing a resource, is as simple as a <code>GET</code> request on the resource <code>URI</code></p>
 <div class="highlight"><pre>GET /bananas/henry HTTP/1.1
 Host: example.org
 Accept: application/json; q=1.0
@@ -2253,7 +2255,8 @@ Accept: text/html; q=1.0, text/*; q=0.8,
 {&quot;color&quot;: &quot;yellow&quot;, &quot;size&quot;:&quot;big&quot;}
 </pre></div>
 
-<p>Server should return <code>201 Resource Created</code> response with one of following
+<p>Server <strong>MUST</strong> return <code>201 Resource Created</code> response with the
+URI of the created resource, in a <code>Location</code> <strong>header</strong> and CAN return following
 content:</p>
 <ul>
 <li><code>id</code> of the newly created resource</li>
@@ -2338,7 +2341,7 @@ Accept: text/html; q=1.0, text/*; q=0.8,
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Delete a resource</h1></header>
+            <header><h1>Delete A Resource</h1></header>
             
             
             <section><p>A <code>DELETE</code> request on the resource <code>URI</code> is all it needs:</p>
@@ -2376,7 +2379,7 @@ Host: example.org
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Mimic HTTP methods</h1></header>
+            <header><h1>Mimic HTTP Methods</h1></header>
             
             
             <section><p>Some clients can't use the whole set of HTTP verbs.</p>
@@ -2411,10 +2414,10 @@ Host: example.org
         <div class="slide">
           <div class="inner">
             
-            <header><h1>No HTTP verb fit your case ?</h1></header>
+            <header><h1>No HTTP Verb Fit Your Case?</h1></header>
             
             
-            <section><h2>What to do when there is no HTTP verb covering my case ?</h2>
+            <section><h2>What to do when there is no HTTP verb covering my case?</h2>
 <blockquote>
 <p>Have a look at <a href="http://www.ietf.org/rfc/rfc2616.txt">HTTP RFC</a>, there is some
 more</p>
@@ -2461,7 +2464,7 @@ more</p>
 <li><a href="https://speakerdeck.com/nicola/developing-restful-web-apis-with-python-flask-and-mongodb">REST with python and
   flask</a></li>
 <li><a href="http://williamdurand.fr/2012/08/02/rest-apis-with-symfony2-the-right-way/">REST API the right way with
-symfony</a></li>
+Symfony</a></li>
 </ul></section>
             
           </div>
@@ -2632,19 +2635,19 @@ symfony</a></li>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Delete a resource</a></th>
+        <th><a href="#slide24">Delete A Resource</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Mimic HTTP methods</a></th>
+        <th><a href="#slide25">Mimic HTTP Methods</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">No HTTP verb fit your case ?</a></th>
+        <th><a href="#slide26">No HTTP Verb Fit Your Case?</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
