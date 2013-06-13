@@ -25,9 +25,10 @@ Everything is a **resource**:
 
 It's the **resource**'s reference address, where to contact it.
 
-For instance, your **URI** as a resource can be your post address.
-
 It is **unique** for each resource.
+
+For instance, considering **YOU** a resource, your **URI** is your **post
+address**.
 
 > A resource can have other non reference locations, and this reference can
 > change depending on the client.
