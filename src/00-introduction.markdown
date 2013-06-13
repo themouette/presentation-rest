@@ -27,8 +27,8 @@ It's the **resource**'s reference address, where to contact it.
 
 It is **unique** for each resource.
 
-For instance, considering **YOU** a resource, your **URI** is your **post
-address**.
+For instance, considering **YOU** being a resource, your **URI** would be your
+**post address**.
 
 > A resource can have other non reference locations, and this reference can
 > change depending on the client.
